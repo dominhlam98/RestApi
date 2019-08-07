@@ -1,12 +1,14 @@
-from pydantic import BaseModel
 import datetime
+from pydantic import BaseModel
+from pydantic.types import EmailStr
 
 
 class Passenger(BaseModel):
     fullname: str
     phone: str
-    email: str
-    score: int = 0
+    email: EmailStr
+    score: int
+    created: datetime.date
 
     def convert_json(self):
         return {
@@ -14,5 +16,5 @@ class Passenger(BaseModel):
             'phone': self.phone,
             'email': self.email,
             'score': self.score,
-            'created': datetime.datetime.date()
+            'created': datetime.datetime.now()
         }

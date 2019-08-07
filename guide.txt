@@ -1,0 +1,16 @@
+Packages install:
+- pip install flask fastapi pydantic pydantic[email] pymongo uvicorn
+
+Setting connection to mongodb on app.py:
+- Setting host: HOST = your server name.
+- Setting port: PORT = your port.
+- Setting database name: DATABASE_NAME = your database name.
+- Setting collection name: COLLECTION_NAME = your collection name.
+
+Command run:
+- uvicorn app:app --reload
+
+
+Address:
+- http://127.0.0.1:8000/docs
+or http://127.0.0.1:8000/redoc
